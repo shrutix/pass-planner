@@ -1,8 +1,6 @@
-#  Satellite Pass & Contact Planner
+# Satellite Pass & Contact Planner
 
-A Streamlit app that predicts when satellites pass over a ground station, using public orbit data from [CelesTrak](https://celestrak.org) and the [Skyfield](https://rhodesmill.org/skyfield/) library. It lists passes, merges them into contact windows, reports coverage and gaps, and plots ground tracks.
-
-> Prototype, not a real operational planning tool. Predictions use publicly available orbit data and SGP4, whose accuracy is limited and degrades as the data ages.
+Predict when satellites pass over a ground station, using public orbit data from [CelesTrak](https://celestrak.org) and the [Skyfield](https://rhodesmill.org/skyfield/) library. It lists passes, merges them into contact windows, reports coverage and gaps, and plots ground tracks.
 
 ## Features
 
@@ -61,13 +59,13 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-In the sidebar, choose how to find satellites (group, name, or catalog number), a ground station, a start time (UTC), and a window, then click **Compute passes**. Nothing is downloaded until you click.
+In the sidebar, choose how to find satellites (group, name, or catalog number), a ground station, a start time (UTC), and a window, then click **Compute passes**.
 
 ### Finding Planet's satellites
 
 The default query is the CelesTrak group `planet`. Confirm the exact `GROUP` value on CelesTrak's current satellite data page, and change it in the sidebar if it differs. You can also search **by name** (for example part of a satellite's name) or by catalog number. If a query returns nothing, the app shows the start of CelesTrak's response so you can see why.
 
-### Data access etiquette
+### Data access
 
 CelesTrak asks clients not to repeat requests that fail with HTTP 403 or 404 and may block abusive addresses (see its [usage policy](https://celestrak.org/usage-policy.php)). This app caches each query on disk for 6 hours, never retries a failed request, and keeps using the last good copy if CelesTrak is unreachable. Cached files live in `.cache/`. Set a real contact in `USER_AGENT` in `gpdata.py` before heavy use.
 
