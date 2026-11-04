@@ -56,7 +56,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
  
-python -m streamlit run app.py
+python -m streamlit run src/app.py
 ```
 
 In the sidebar, choose how to find satellites (group, name, or catalog number), a ground station, a start time (UTC), and a window, then click **Compute passes**.

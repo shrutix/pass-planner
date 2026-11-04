@@ -13,7 +13,7 @@ from propagate import epoch_age_days, find_passes, ground_track, satellites_from
 from stations import PRESETS, Station
 from windows import contact_windows, coverage_summary, filter_passes
  
-CACHE_DIR = Path(__file__).resolve().parent / ".cache"
+CACHE_DIR = Path(__file__).resolve().parent.parent / ".cache"
 STALE_EPOCH_DAYS = 14.0
 CUSTOM_STATION = "Custom location"
 QUERY_KINDS = {"Group": "group", "Name contains": "name", "Catalog number": "catnr"}
