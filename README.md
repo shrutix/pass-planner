@@ -1,8 +1,8 @@
-# 🛰️ Satellite Pass & Contact Planner
+#  Satellite Pass & Contact Planner
 
 A Streamlit app that predicts when satellites pass over a ground station, using public orbit data from [CelesTrak](https://celestrak.org) and the [Skyfield](https://rhodesmill.org/skyfield/) library. It lists passes, merges them into contact windows, reports coverage and gaps, and plots ground tracks.
 
-> **Prototype, not a real operational planning tool.** Predictions use publicly available orbit data and SGP4, whose accuracy is limited and degrades as the data ages.
+> Prototype, not a real operational planning tool. Predictions use publicly available orbit data and SGP4, whose accuracy is limited and degrades as the data ages.
 
 ## Features
 
@@ -13,6 +13,10 @@ A Streamlit app that predicts when satellites pass over a ground station, using 
 - **Ground track map** that handles the ±180° longitude wrap correctly
 - **Data-age warnings** when a satellite's orbit data is far from the prediction time
 - **Polite data access**: on-disk caching, validation before caching, fallback to the last good copy, and no automatic retries
+
+![Example metrics of passes for San Francisco ground station](docs/example1.png)
+
+![Pass list table and ground track](docs/example2.png)
 
 ## Why OMM instead of TLEs
 
